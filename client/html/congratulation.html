@@ -1,0 +1,32 @@
+
+
+<template name="Congratulation">
+  {{#ionNavView}}
+  {{#contentFor "headerButtonLeft"}}
+    <button class="button button-clear pull-left" data-ion-menu-toggle="left">
+      {{> ionIcon icon='navicon'}}
+    </button>
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title" style="text-align: center;">你听吧</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right" data-ion-menu-toggle="right">
+      {{> ionIcon icon='podium'}}
+    </button>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+    <div>
+      <img src="/images/congrats.gif" style="max-width:100%;">
+    </div>
+    <div class="next-video-div">
+      <button class="button button-positive next-level-button">去下一级</button>
+    </div>
+    {{/ionContent}}
+  {{/ionView}}
+  {{/ionNavView}}
+</template>

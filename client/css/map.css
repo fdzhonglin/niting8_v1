@@ -1,0 +1,31 @@
+
+
+.map-pic {
+    max-width:100%; 
+    max-height:100%;
+}
+
+.map-trail {
+    margin-top: 80%;
+    display: block;
+    max-width:100%; 
+    max-height:100%;
+}
+
+.map-trail-down {
+    margin-left: 70%;
+    max-width:100%; 
+}
+
+.level-pic {
+    max-width: 100%;
+}
+
+.inactive-avatar {
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%); 
+}
+
+.real-map {
+    margin: 0px 5%;
+}

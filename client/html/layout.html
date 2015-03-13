@@ -1,0 +1,157 @@
+
+<template name="ApplicationLayout">
+  {{#ionBody}}
+    {{#ionSideMenuContainer}}
+      {{#ionSideMenus}}
+        {{#ionSideMenu side="left"}}
+          <div style="background-color: #4a87ee; height:200px;" id="avatar-div">
+            <img id="avatar-pic" src="{{avatar_img_url}}"/>
+          </div>
+  
+          <div>
+            <div class="list">
+              <a class="item item-icon-left to-home" href="#">
+                <i class="icon ion-location"></i>
+                探险图
+              </a>
+  
+              <a class="item item-icon-left to-history" href="#">
+                <i class="icon ion-clock"></i>
+                历史列表
+              </a>
+  
+              <a class="item item-icon-left to-subscription" href="#">
+                <i class="icon ion-heart"></i>
+                订阅
+              </a>
+  
+              <a class="item item-icon-left to-setting" href="#">
+                <i class="icon ion-gear-a"></i>
+                设定
+              </a>
+            </div>
+          </div>
+        {{/ionSideMenu}}
+
+        {{#ionSideMenu side="right"}}
+           <div class="bar bar-header bar-positive">
+             <h1 class="title">英雄榜</h1>
+           </div>
+           <div class="content has-header">
+             {{> LeaderScore}}
+           </div>
+        {{/ionSideMenu}}
+      {{/ionSideMenus}}
+
+      {{#ionSideMenuContent}}
+        {{> ionNavBar class="bar-positive"}}
+        {{> yield}} 
+      {{/ionSideMenuContent}}
+    {{/ionSideMenuContainer}}
+  {{/ionBody}}
+</template>
+
+<template name="LeaderScore">
+  <div class="list card">
+    {{#each heroes}}
+    {{#if isCurrentUser _id}}
+    <a class="item item-icon-left" style="background-color:lightgreen;">
+      <i class="icon"><img src="{{thumbnail_avatar _id}}" style="width:50px;"/></i>
+      {{nickname}}<br/>
+      分数:{{score}}
+    </a>
+    {{else}}
+    <a class="item item-icon-left">
+      <i class="icon"><img src="{{thumbnail_avatar _id}}" style="width:50px;"/></i>
+      {{nickname}}<br/>
+      分数:{{score}}
+    </a>
+    {{/if}}
+    {{/each}}
+    {{#if isNotTopUser}}
+    您的目前分数:{{score}}
+    {{/if}}
+  </div>
+</template>
+
+<template name="VideoInfo">
+  {{#ionBody}}
+    {{> ionNavBar class="bar-positive"}}
+    {{#ionNavView}}
+       {{#contentFor "headerButtonLeft"}}
+       <button class="button button-clear back-to-map">
+         {{> ionIcon icon="chevron-left"}}
+       </button>
+       {{/contentFor}}
+
+       {{#contentFor "headerTitle"}}
+       <h1 class="title" style="text-align: center;">你听吧</h1>
+       {{/contentFor}}
+
+       {{#ionView}}
+       {{#ionContent}}
+         {{> yield}}
+       {{/ionContent}}
+       {{/ionView}}
+    {{/ionNavView}}
+  {{/ionBody}}
+</template>
+
+<template name="TagInfo">
+  <div class="tag-page">
+  {{#ionBody}}
+    {{> ionNavBar class="bar-positive"}}
+    {{#ionNavView class="tag-view"}}
+       {{#contentFor "headerButtonLeft"}}
+       <button class="button button-clear back-to-map">
+         {{> ionIcon icon="chevron-left"}}
+       </button>
+       {{/contentFor}}
+
+       {{#contentFor "headerTitle"}}
+       <h1 class="title" style="text-align: center;">你听吧</h1>
+       {{/contentFor}}
+
+       {{#ionView}}
+       {{#ionContent}}
+         {{> yield}}
+       {{/ionContent}}
+       {{/ionView}}
+    {{/ionNavView}}
+  {{/ionBody}}
+  </div>
+</template>
+
+<template name="AccountLayout">
+  {{> yield}}
+</template>
+
+
+<template name="InitSetting">
+  {{#ionBody}}
+  {{> yield}}
+  {{/ionBody}}
+</template>
+
+<template name="HistoryVideo">
+  {{#ionBody}}
+    {{> ionNavBar class="bar-positive"}}
+    {{#ionNavView}}
+       {{#contentFor "headerButtonLeft"}}
+       <button class="button button-clear back-to-map">
+         {{> ionIcon icon="chevron-left"}}
+       </button>
+       {{/contentFor}}
+
+       {{#contentFor "headerTitle"}}
+       <h1 class="title" style="text-align: center;">你听吧</h1>
+       {{/contentFor}}
+
+       {{#ionView}}
+       {{#ionContent}}
+         {{> yield}}
+       {{/ionContent}}
+       {{/ionView}}
+    {{/ionNavView}}
+  {{/ionBody}}
+</template>

@@ -1,0 +1,12 @@
+
+#avatar-div {
+    padding-top: 5%;
+}
+
+#avatar-pic {
+    display:block  !important; 
+    margin:auto !important; 
+    max-height: 90% !important;
+    border-radius: 50%;
+    background-color: white;
+}

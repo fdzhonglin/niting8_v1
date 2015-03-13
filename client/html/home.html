@@ -1,0 +1,94 @@
+
+
+<template name="home">
+  {{#ionNavView}}
+  {{#contentFor "headerButtonLeft"}}
+    <button class="button button-clear pull-left" data-ion-menu-toggle="left">
+      {{> ionIcon icon='navicon'}}
+    </button>
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title" style="text-align: center;">你听吧</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right" data-ion-menu-toggle="right">
+      {{> ionIcon icon='podium'}}
+    </button>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+    <button data-ion-modal="WarningModel" style="display:none" 
+            id="free-subscription-modal">Open Modal</button>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <img src="{{level_pic_url}}" class="level-pic"/>
+      </div>
+      <div class="col"></div>
+    </div> 
+    <div class="row">
+    </div>
+    
+    <div class="real-map">
+    {{#each map_info}}
+    <div class="row">
+      {{#each .}}
+          {{#if isActive icon}}
+            <div class="col col-25">
+              <img src="{{avatar_img_url}}" class="active-avatar map-pic" id="current-step"/>
+            </div>
+          {{/if}}
+
+          {{#if isInactive icon}}
+            <div class="col col-25">
+              <img src="{{inactive_img_url}}" class="map-pic"/>
+            </div>
+          {{/if}}
+
+          {{#if isBlank25 icon}} 
+             <div class="col col-25"></div>
+          {{/if}}
+
+          {{#if isBlank20 icon}} 
+             <div class="col col-20"></div>
+          {{/if}}
+
+          {{#if isBlank10 icon}} 
+             <div class="col col-10"></div>
+          {{/if}}
+
+          {{#if isBlank icon}} 
+             <div class="col"></div>
+          {{/if}}
+
+          {{#if isFootprint icon}}
+            <div class="col"><img src="{{footprintUrl icon}}" class="map-trail"/></div>
+          {{/if}}
+
+          {{#if isFootprintDown icon}}
+            <div class="col"><img src="{{footprintUrl icon}}" class="map-trail-down"/></div>
+          {{/if}}
+
+          {{#if isTag icon}}      
+            <div class="col col-25"><img src="{{tagUrl icon}}" 
+                 data-step="{{step}}" class="map-pic map-tag"/></div>
+          {{/if}}
+      {{/each}}
+    </div>
+    {{/each}}
+    </div>
+    {{/ionContent}}
+  {{/ionView}}
+  {{/ionNavView}}
+</template>
+
+<template name="WarningModel">
+  {{#ionModal style="height: 300"}}
+  <div style="text-align: center;">
+    <p>非常抱歉，由于流量限制，免费用户每天最多只能前进一步！</p>
+  </div>
+  {{/ionModal}}
+</template>

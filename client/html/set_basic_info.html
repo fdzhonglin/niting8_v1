@@ -1,0 +1,26 @@
+
+<template name="SetBasicInfo">
+  <div class="basic-info">
+    <h2>请选择您的角色（左右滑动查看）</h2>
+  </div>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      {{#each avatars}}
+        <div class="swiper-slide"><img src="{{img_url}}"/></div>
+      {{/each}}
+    </div>
+  </div>
+  <div class="basic-info">
+    <h2>请输入您的昵称</h2>
+  </div>
+  <div class="list list-inset">
+    <label class="item item-input">
+      <input id="nickname" type="text" placeholder="" style="font-size:20px;">
+    </label>
+  </div>
+  <div class="submit-div">
+    <button class="button button-positive button-large" id="confirmation-button">
+      提交
+    </button>
+  </div>
+</template>

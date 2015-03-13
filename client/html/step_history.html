@@ -1,0 +1,30 @@
+
+
+
+
+<template name="StepHistory">
+{{#ionNavView}}
+  {{#contentFor "headerButtonLeft"}}
+  <button class="button button-clear pull-left" data-ion-menu-toggle="left">
+    {{> ionIcon icon="chevron-left"}}
+  </button>
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+  <h1 class="title" style="text-align: center;">{{cn_tag}}</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      {{#each video_list}}
+        <div class="item item-thumbnail-left history-video-item" 
+           data-video-id="{{_id}}">
+          <img src="{{cover}}">
+          <h2>{{title}}</h2>
+          <p>{{tutor}}</p>
+        </div>
+      {{/each}}
+    {{/ionContent}}
+  {{/ionView}}
+{{/ionNavView}}
+</template>

@@ -1,0 +1,53 @@
+
+#avatar-head {
+    padding-top: 20px;
+}
+
+#avatar-head-pic {
+    display:block  !important; 
+    margin:auto !important; 
+    height: 150px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.tag-page .view {
+    background-color: #387ef5;
+}
+
+.cover {
+    width:200px;
+    height:300px;
+    border-radius: 25px;
+    background-color: white;
+}
+
+#coverflow {
+    margin-top: 50px;
+}
+
+.tag-pic img {
+    width: 60%;
+    display: block;
+    margin: auto;
+    padding-top: 33px;
+}
+
+.tag-title {
+    margin: 15px;
+    text-align: center;
+}
+
+.button-tag {
+    position: absolute;
+    bottom:   0;
+    right: 25%;
+    text-align: center;
+    width: 50%;
+    margin-bottom: 25px;
+}
+
+.confirm-div {
+    height: 100%;
+    text-align:center;
+}

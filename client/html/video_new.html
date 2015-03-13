@@ -1,0 +1,74 @@
+
+<template name="VideoNew">
+
+  <div id="video-view-div">
+  </div>
+
+  <div class="item" style="text-align:center;">
+    <p>
+      {{title}}
+    </p>
+    <div style="margin-top: 20px">
+    喜欢 
+    <a href="javascript:void(0)">
+      <i class="radio-icon ion-heart" style="color: #009fda;"></i>
+    </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    不喜欢 
+    <a href="javascript:void(0)">
+      <i class="radio-icon ion-heart-broken" style="color: black;"></i>
+    </a><br/>
+    {{#if isCordova}}
+    <a href="javascript:void(0)" id="video-share" style="margin-top: 10px">
+      分享本视频
+    </a>
+    {{/if}}
+    <div style="display: none;">
+      <input id="like-radio" type="radio" name="like_it" value="true" checked>
+      <input type="radio" name="like_it" value="false">
+    </div>
+    </div>
+  </div>
+
+  {{#each indexedArray answers}}
+  <div class="row">
+    <div class="col col-20">问题{{_index}}：</div>
+    <div class="col col-80">
+      <div class="list question-div">
+        {{#each options}}
+        <label class="item item-radio">
+          {{#if isRightChoice this ../right_choice}}
+          <input type="radio" name="question{{../_index}}"  class="right-answer">
+          <div class="item-content">
+            {{.}}
+          </div>
+          {{else}}
+          <input type="radio" name="question{{../_index}}"  class="wrong-answer">
+          <div class="item-content">
+            {{.}}
+          </div>
+          {{/if}}
+          <i class="radio-icon ion-checkmark"></i>
+        </label>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  {{/each}}
+
+  <div class="submit-button-div">
+    <button class="button button-positive" id="question-submit-button">提交</button>
+  </div>
+
+  <div class="list card comment-div" style="display: none;">
+    <div class="item">
+      <h2>评论</h2>
+    </div>
+    <div class="item item-body">
+      <textarea placeholder="" row="16" id="comment-text"></textarea>
+    </div>
+  </div>
+  <div class="next-video-div" style="display: none;">
+    <button class="button button-positive next-video-button">去看下一个视频</button>
+  </div>
+</template>

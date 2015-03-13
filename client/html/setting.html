@@ -1,0 +1,39 @@
+
+<template name="setting">
+  {{#ionNavView}}
+  {{#contentFor "headerButtonLeft"}}
+    <button class="button button-clear pull-left" data-ion-menu-toggle="left">
+      {{> ionIcon icon='navicon'}}
+    </button>
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title" style="text-align: center;">设定</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right" data-ion-menu-toggle="right">
+      {{> ionIcon icon='podium'}}
+    </button>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+    <div class="basic-info">
+      <h2>请输入您的新昵称</h2>
+    </div>
+    <div class="submit-div" style="margin-top:70px;">
+      <button class="button button-positive button-large" id="confirmation-button">
+        提交
+      </button>
+    </div>
+    {{/ionContent}}
+  {{/ionView}}
+  {{/ionNavView}}
+  <div class="list list-inset" style="margin-top:90px;">
+    <label class="item item-input">
+      <input id="nickname" type="text" placeholder="" style="font-size:20px;"
+             value="{{current_nickname}}">
+    </label>
+  </div>
+</template>

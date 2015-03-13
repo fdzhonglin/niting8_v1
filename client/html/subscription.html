@@ -1,0 +1,46 @@
+
+<template name="SubscriptionPage">
+  {{#ionNavView}}
+  {{#contentFor "headerButtonLeft"}}
+    <button class="button button-clear pull-left" data-ion-menu-toggle="left">
+      {{> ionIcon icon='navicon'}}
+    </button>
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title" style="text-align: center;">订阅</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right" data-ion-menu-toggle="right">
+      {{> ionIcon icon='podium'}}
+    </button>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      <div class="card" style="height:300px; text-align: center; border: 0px solid; box-shadow: none;">
+        <img src="/images/subscribe.gif" style="max-height: 100%; margin:auto;"/>
+      </div>
+      {{#if needNotification}}
+      <div style="text-align: center">
+        <button class="button button-positive" id="month-notify-button" style="margin-bottom: 5px">
+          我有兴趣成为月费用户
+        </button>
+        <button class="button button-positive" id="year-notify-button">
+          我有兴趣成为年费用户
+        </button>
+      </div>
+      {{/if}}
+      <div class="card" style="text-align: center; border: 0px solid; box-shadow: none;">
+        <img src="/images/price.png" style="max-width: 100%;"/>
+      </div>
+      <div class="card">
+        <div class="item item-text-wrap">
+          功能正在添加中，请您耐心等待！
+        </div>
+      </div>
+    {{/ionContent}}
+  {{/ionView}}
+  {{/ionNavView}}
+</template>

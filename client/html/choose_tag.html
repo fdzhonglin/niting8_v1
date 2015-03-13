@@ -1,0 +1,24 @@
+
+<template name="ChooseTag">
+  <div id="avatar-head">
+    <img src="{{avatar_img_url}}" id="avatar-head-pic"/>
+  </div>
+
+  <div id="coverflow">
+    {{#each tag_list}}
+    <div class="cover">
+      <div class="tag-pic">
+        <img src="{{tag_pic}}" />
+      </div>
+      <div class="tag-title">
+        {{cn_title}}
+      </div>
+      <div class="confirm-div">
+        <button class="button button-positive button-tag" data-tag-str="{{title}}">
+          确定
+        </button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</template>

@@ -1,0 +1,15 @@
+
+.video-thumb-div {
+    text-align:center;
+}
+
+#video-pic {
+    display:block;
+    margin:auto;
+}
+
+#question-submit-button {
+    margin: 10px auto;
+    width: 30%;
+}
+
